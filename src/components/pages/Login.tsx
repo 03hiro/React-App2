@@ -20,20 +20,26 @@ export const Login: VFC = memo(() => {
           ユーザー管理アプリ
         </Heading>
         <Divider my={4} />
-        <Stack spacing={6} px={10} py={4}>
-          <Input
-            placeholder="ユーザーID"
-            value={userId}
-            onChange={onChangeUserId}
-          />
-          <PrimaryButton
-            disabled={userId === ""}
-            isLoading={loading}
-            onClick={onClickLogin}
-          >
-            ログイン
-          </PrimaryButton>
-        </Stack>
+        <form
+          onSubmit={(e) => {
+            onClickLogin();
+          }}
+        >
+          <Stack spacing={6} px={10} py={4}>
+            <Input
+              placeholder="ユーザーID"
+              value={userId}
+              onChange={onChangeUserId}
+            />
+            <PrimaryButton
+              disabled={userId === ""}
+              isLoading={loading}
+              onClick={onClickLogin}
+            >
+              ログイン
+            </PrimaryButton>
+          </Stack>
+        </form>
       </Box>
     </Flex>
   );
