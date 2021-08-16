@@ -11,7 +11,7 @@ export const Login: VFC = memo(() => {
   const onChangeUserId = (e: ChangeEvent<HTMLInputElement>) =>
     setUserId(e.target.value);
 
-  const onClickLogin = () => login(userId);
+  const onClickLogin = () => {login(userId)};
 
   return (
     <Flex align="center" justify="center" height="100vh">
